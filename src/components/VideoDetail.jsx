@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { Typography, Box, Stack } from "@mui/material";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-import { Videos, Loader } from "./";
+import { Videos } from "./";
 import { fetchFormApi } from "../utils/FetchFromApi";
+import { CheckCircle } from "@mui/icons-material";
 
 const VideoDetail = () => {
   const [videoDetail, setVideoDetail] = useState(null);
