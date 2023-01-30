@@ -8,8 +8,9 @@ const Feed = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    fetchFormApi(`search?part=snippet&q=${selectedCategory}`).then(
-      (data) => setVideos(data.items)
+    setVideos(null);
+    fetchFormApi(`search?part=snippet&q=${selectedCategory}`).then((data) =>
+      setVideos(data.items)
     );
   }, [selectedCategory]);
 
@@ -31,7 +32,7 @@ const Feed = () => {
           variant="body2"
           sx={{ mt: 1.5, color: "#fff" }}
         >
-          Copyright 2023 unique media
+          Copyright youtube clone
         </Typography>
         <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
           <Typography
