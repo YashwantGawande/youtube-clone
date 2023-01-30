@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { Typography, Box, Stack } from "@mui/material";
 
-import { Videos } from "./";
+import { Videos,Loader } from "./";
 import { fetchFormApi } from "../utils/FetchFromApi";
 import { CheckCircle } from "@mui/icons-material";
 
@@ -22,7 +22,7 @@ const VideoDetail = () => {
     );
   }, [id]);
 
-  if (!videoDetail?.snippet) return "Loading...";
+  if (!videoDetail?.snippet) return <Loader />;
 
   const {
     snippet: { title, channelId, channelTitle },
@@ -52,7 +52,7 @@ const VideoDetail = () => {
               px={2}
             >
               <Link to={`/channel/${channelId}`}>
-                <Typography variant={{ sm: "subtitle", md: "h6" }} color="#fff">
+                <Typography variant={{ sm: "subtitle1", md: "h6" }} color="#fff">
                   {channelTitle}
                   <CheckCircle
                     sx={{ fontSize: "12px", color: "gray", ml: "5px" }}
